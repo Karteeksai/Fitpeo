@@ -10,14 +10,21 @@ import testbase.Baseclass;
 public class Revenuecalculatortest extends Baseclass{
 	
 	@Test
-	public void calculatortest() {
+	public void calculatortest() throws Exception{
 		Homepage home = new Homepage(driver);
 		home.calculator();
 		
 		Revenuecaluculator revenue = new Revenuecaluculator(driver);
+		Thread.sleep(2000);
 		revenue.scrollpage();
-		revenue.setSliderValue(null, 820);
-		//revenue.settextvalueofslider(820);
+		Thread.sleep(2000);
+		revenue.adjustslider();
+		Thread.sleep(6000);
+		revenue.updatetext();
+		Thread.sleep(2000);
+		revenue.clickcheckbox();
+		Thread.sleep(2000);
+		
 		
 		
 	}
